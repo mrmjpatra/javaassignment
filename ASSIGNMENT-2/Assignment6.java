@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-/*Write a java program to check weather the given number is palindrome and prime or not?
- */
+/*Write a java program to check weather the given number is palindrome and prime or not? */
 public class Assignment6 {
     public static void main(String[] args) {
         int r, sum = 0, temp;

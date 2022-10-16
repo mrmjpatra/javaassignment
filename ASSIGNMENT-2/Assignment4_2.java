@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-/*. x-x3/3! + x5/5!-x7/7!+------+xn/n!
+/*.Write a java program to compute following series and take input x and n
+    x-x3/3! + x5/5!-x7/7!+------+xn/n!
  */
 public class Assignment4_2 {
     public static void main(String[] args) {

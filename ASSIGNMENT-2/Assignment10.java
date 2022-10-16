@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-/*Write a program to generate Fibonacci series up to n terms? Value of n will be 
-accepted from user? */
+/*Write a program to generate Fibonacci series up to n terms? Value of n will be accepted from user? */
 public class Assignment10 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

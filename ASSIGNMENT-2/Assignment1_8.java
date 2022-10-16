@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Assignment1_8 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int num,rem1,rem2,sum=0,prod=1;
+        int num,rem1,rem2,sum=0;
 
         System.out.println("Enter the number");
         num=sc.nextInt();
@@ -11,9 +11,7 @@ public class Assignment1_8 {
             rem1=num%10;
             rem2=(num/10)%10;
             if (rem1%2==0 && rem2%2==0) {
-                prod=rem1*rem2;
-                sum+=prod;
-                prod=1;
+                sum+=rem1*rem2;
             }
             num/=10;
         }

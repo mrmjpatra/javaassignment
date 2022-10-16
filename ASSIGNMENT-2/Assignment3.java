@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/*Write a java program to find sum of product of corresponding even digits of 
-first any digit number and corresponding odd digit of any digit number Such 
-as n=1234 m=4567 output=4*7+2*5 */
+/*Write a java program to find sum of product of corresponding even digits of first any digit number and corresponding odd digit of any digit number Such as n=1234 m=4567 output=4*7+2*5 */
 public class Assignment3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

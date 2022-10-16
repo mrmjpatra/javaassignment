@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-/* Write a java program to find factorial of a number using while loop, do while loop 
-and for loop all in one program?[hint use switch block] */
+/* Write a java program to find factorial of a number using while loop, do while loop and for loop all in one program?[hint use switch block] */
 public class Assignment7 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

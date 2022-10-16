@@ -11,9 +11,7 @@ public class Assignment1_10 {
             rem1=num%10;
             rem2=(num/10)%10;
             if ((rem1==2 || rem1==3 || rem1==5 || rem1==7) && (rem2==2 || rem2==3 || rem2==5 || rem2==7)) {
-                prod=rem1*rem2;
-                sum+=prod;
-                prod=1;
+                sum+=rem1*rem2;
             }
             num/=10;
         }
