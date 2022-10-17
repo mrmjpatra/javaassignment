@@ -1,6 +1,5 @@
 /*Write a program to perform following using the numbers in between 23 to 249 ?
-    h) Check whether the difference between largest even number and smallest odd 
-    number is palindrome or not?
+    h) Check whether the difference between largest even number and smallest odd number is palindrome or not?
  */
 public class Assignment11_8 {
     public static void main(String[] args) {

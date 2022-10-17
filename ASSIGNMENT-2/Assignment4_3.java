@@ -10,7 +10,7 @@ public class Assignment4_3 {
         x = sc.nextInt();
         System.out.println("Enter the value of n");
         n = sc.nextInt();
-        for(int i=n;i>=2;i=i-2){
+        for(int i=2;i<=n;i=i+2){
             for (int j = 1; j <=i; j++) {
                 fact=fact*i;
             }

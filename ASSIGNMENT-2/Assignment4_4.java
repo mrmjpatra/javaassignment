@@ -11,9 +11,9 @@ public class Assignment4_4 {
         System.out.println("Enter the value of n");
         n=sc.nextInt();
         int count=0;
-        boolean check=true;
+        boolean check=false;
         sum=x;
-        for (int i = n; i >=3; i--) {
+        for (int i = 3; i <=n; i--) {
             count=0;
             for (int j = 1; j <=i; j++) {
                 if (i%j==0) {

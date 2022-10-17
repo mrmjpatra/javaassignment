@@ -3,7 +3,7 @@
  */
 public class Assignment11_3 {
     public static void main(String[] args) {
-        int rem,count=0,mcount=0;
+        int count=0,mcount=0;
         for (int i = 24; i < 249; i++) {
 
             for (int j = 1; j <=i; j++) {
@@ -11,7 +11,6 @@ public class Assignment11_3 {
                     count++;
                 }
             }
-
             if (count==2) {
                 System.out.println(i);
                 mcount++;

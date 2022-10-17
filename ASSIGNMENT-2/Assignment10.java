@@ -8,11 +8,12 @@ public class Assignment10 {
         System.out.println("Enter the number");
         num=sc.nextInt();
         System.out.print("Series is :: \t"+fib1+"\t"+fib2);
-        while (fib3<=num) {
+        while (num>2) {
             fib3=fib1+fib2;
             System.out.print("\t"+fib3);
             fib1=fib2;
             fib2=fib3;
+            num--;
      }
     }
 }

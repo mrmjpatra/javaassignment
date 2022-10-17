@@ -1,8 +1,5 @@
-
-
 /*Write a program to perform following using the numbers in between 23 to 249 ?
-  j) find the sum of product of corresponding digits of 2nd largest even number and 
-     3rd smallest odd number?
+  j) find the sum of product of corresponding digits of 2nd largest even number and   3rd smallest odd number?
  */
 public class Assignment11_10 {
     public static void main(String[] args) {

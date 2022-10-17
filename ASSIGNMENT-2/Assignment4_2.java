@@ -6,25 +6,27 @@ import java.util.Scanner;
 public class Assignment4_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x, n, fact = 1, count = 0;
+        int x, n, fact = 1;
+        boolean check=false;
         double sum = 0;
         System.out.println("Enter the value of x");
         x = sc.nextInt();
         System.out.println("Enter the value of n");
         n = sc.nextInt();
         sum = x;
-        for (int i = n; i >= 3; i =i*2-1) {
+        for (int i = 3; i <= n; i =i+2) {
             for (int j = 1; j <= i; j++) {
                 fact = fact * j;
             }
-            count++;
-            if (count % 2 == 0) {
+           
+            if (check) {
                 sum += Math.pow(x, i) / fact;
-                fact = 1;
-            } else if (count % 2 != 0) {
+                check=false;
+            } else  {
                 sum -= Math.pow(x, i) / fact;
-                fact = 1;
+                check=true;
             }
+            fact = 1;
         }
 
         System.out.println(sum);

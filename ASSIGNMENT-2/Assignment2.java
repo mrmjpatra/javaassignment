@@ -5,7 +5,7 @@ any digit number Such as n=1234 m=7896 output=6*4+9*3+8*2+7*1 */
 public class Assignment2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int m, n, sum = 0, prod = 1, rem1, rem2;
+        int m, n, sum = 0, rem1, rem2;
         System.out.println("Enter the first number (m)");
         m = sc.nextInt();
         System.out.println("Enter the second number (n)");

@@ -7,20 +7,22 @@ public class Assignment4_1 {
         Scanner sc=new Scanner(System.in);
         int x,n,fact=1;
         double sum=1;
+        boolean check=false;
+
         System.out.println("Enter the value of x ");
         x=sc.nextInt();
         System.out.println("Enter the value of n ");
         n=sc.nextInt();
 
-        for (int i = n; i >1; i--) {
+        for (int i = 2; i <=n; i++) {
             for (int j = 1; j <=i; j++) {
                 fact*=j;
             }
-            if (i%2==0) {
-               sum=sum-(Math.pow(x, i)/fact);
+            if (check) {
+               sum+=(Math.pow(x, i)/fact);
                fact=1; 
-            }else if(i%2!=0){
-                sum=sum+(Math.pow(x, i)/fact);
+            }else{
+                sum-=(Math.pow(x, i)/fact);
                 fact=1;
             }
         }
