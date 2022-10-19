@@ -20,11 +20,12 @@ public class Assignment4_1 {
             }
             if (check) {
                sum+=(Math.pow(x, i)/fact);
-               fact=1; 
+               check=false;
             }else{
                 sum-=(Math.pow(x, i)/fact);
-                fact=1;
+                check=true;
             }
+            fact=1;
         }
         System.out.println(sum);
 
