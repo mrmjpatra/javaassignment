@@ -12,7 +12,6 @@ public class Assignment11_3 {
                 }
             }
             if (count==2) {
-                System.out.println(i);
                 mcount++;
             }
             count=0;

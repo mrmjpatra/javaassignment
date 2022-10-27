@@ -18,21 +18,33 @@ public class Assignment5 {
         }
 
         sum=x;
-
-        for (int i = n; i>=3; i+=2) {
+        boolean check=false;
+        for (int i = 3; i<=n; i--) {
+            count=0;
             for (int j = 1; j <=i; j++) {
-                fact*=i;
+                if (i%j==0) {
+                    count++;
+                }
             }
-            count++;
-            if (count%2==0) {
-                sum+=Math.pow(x, i)/fact;
-            }else if (count%2!=0) {
-                sum-=Math.pow(x, i)/fact;
+            
+            if (count==2) {
+                for(int k=1;k<=i;k++){
+                    fact=fact*k;
+                }
+                if (check) {
+                    sum+=Math.pow(x, i)/fact;
+                    fact=1;
+                    check=false;
+                }else {
+                    sum-=Math.pow(x, i)/fact;
+                    fact=1;
+                    check=true;
+                }                
             }
         }
 
         System.out.println(sum);
-        System.out.println("Assignment5.main()");      
+    
 
     }
 }

@@ -5,7 +5,7 @@ public class Assignment11_4 {
     public static void main(String[] args) {
         int r, count = 0, sum = 0, temp;
         for (int i = 24; i < 249; i++) {
-
+            sum=0;
             temp = i;
             while (temp > 0) {
                 r = temp % 10; // getting remainder
@@ -13,7 +13,7 @@ public class Assignment11_4 {
                 temp = temp / 10;
             }
             if (i == sum) {
-                System.out.println(i);
+                count++;
             }
 
         }

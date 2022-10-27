@@ -12,7 +12,7 @@ public class Assignment11_9 {
             }
         }
         count=0;
-        System.out.println("The first five largest odd number");
+        System.out.println("The first five smallest odd number");
         for (int i = 24; i < 249; i++) {
            
            if (i%2!=0 && count<=5) {
