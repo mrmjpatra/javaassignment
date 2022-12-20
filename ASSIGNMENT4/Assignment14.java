@@ -14,10 +14,10 @@ import java.util.Arrays;
 
 /*WAP to create one registration form for students to enter their name, roll no, regd no, stream, branch, semester, gender, hobbies, email id and phone number using JLabel, JTextField, JCheckBox, JRadioButton, JComboBox, JButton for submit and reset Button? */
 
-class RegistrationForm extends JFrame implements ActionListener {
+class RegistrationForm extends JFrame implements ActionListener, ItemListener {
     private Container c;
-    JLabel lName, lEmail, lPhone, lRoll, lRegd, lStream, lBranch, lSemester, lGender, lHobbies;
-    JTextField tName, tEmail, tPhone, tRoll, tRegd, tStream, tBranch;
+    private JLabel lName, lEmail, lPhone, lRoll, lRegd, lStream, lBranch, lSemester, lGender, lHobbies;
+    private JTextField tName, tEmail, tPhone, tRoll, tRegd, tStream, tBranch;
     private JComboBox cbBranch;
     private JComboBox cbSemester;
     private JRadioButton male;
@@ -27,7 +27,9 @@ class RegistrationForm extends JFrame implements ActionListener {
     private JButton sub;
     private JButton reset;
     private JLabel res;
-    private JTextArea resadd;
+
+    String name, roll, regd, stream, branch, semester, gender, email, phone;
+    String hob = " ";
 
     RegistrationForm() {
         setTitle("Registration Form");
@@ -127,12 +129,17 @@ class RegistrationForm extends JFrame implements ActionListener {
         c.add(lHobbies);
         hb1 = new JCheckBox("Watching Movies");
         hb1.setBounds(200, 450, 150, 20);
+        hb1.addItemListener(this);
         hb2 = new JCheckBox("Playing Cricket");
+        hb1.addItemListener(this);
         hb2.setBounds(350, 450, 150, 20);
+        hb2.addItemListener(this);
         hb3 = new JCheckBox("Listening Songs");
         hb3.setBounds(200, 500, 150, 20);
+        hb3.addItemListener(this);
         hb4 = new JCheckBox("Travelling");
         hb4.setBounds(350, 500, 100, 20);
+        hb4.addItemListener(this);
         c.add(hb1);
         c.add(hb2);
         c.add(hb3);
@@ -164,55 +171,51 @@ class RegistrationForm extends JFrame implements ActionListener {
         reset.setFont(new Font("Arial", Font.PLAIN, 15));
         reset.setSize(150, 20);
         reset.setLocation(400, 700);
+        reset.addActionListener(this);
         c.add(reset);
-
-        resadd = new JTextArea();
-        resadd.setFont(new Font("Arial", Font.PLAIN, 15));
-        resadd.setSize(500, 500);
-        resadd.setLocation(580, 175);
-        resadd.setLineWrap(true);
-        c.add(resadd);
-
         setSize(1500, 1000);
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getSource()==reset);
-        System.out.println("hello");
-        String name = tName.getText();
-        String roll = tRoll.getText();
-        String regd = tRegd.getText();
-        String stream = tStream.getText();
-        String branch = (String) cbBranch.getSelectedItem();
-        String semester = (String) cbSemester.getSelectedItem();
-        String gender = male.isSelected() ? "Male" : "Female";
-        String hobbies = "";
-        if (hb1.isSelected()) {
-            hobbies += hb1.getText();
+        if (e.getSource() == sub) {
+            name = tName.getText();
+            roll = tRoll.getText();
+            regd = tRegd.getText();
+            stream = tStream.getText();
+            branch = (String) cbBranch.getSelectedItem();
+            semester = (String) cbSemester.getSelectedItem();
+            gender = male.isSelected() ? "Male" : "Female";
+            email = tEmail.getText();
+            phone = tPhone.getText();
+            new DisplayFormDetails(this);
+            setVisible(false);
         }
-        if (hb2.isSelected()) {
-            hobbies += hb2.getText();
+        if (e.getSource() == reset) {
+            tName.setText("");
+            tRoll.setText("");
+            tBranch.setText("");
+            tEmail.setText("");
+            tRegd.setText("");
         }
-        if (hb3.isSelected()) {
-            hobbies += hb3.getText();
-        }
-
-        hobbies = Arrays.toString(hobbies.toCharArray());
-
-        resadd.setText(
-                "Name : " + name +
-                        "\nRoll No : " + roll +
-                        "\nRegd. No" + regd +
-                        "\nStream " + stream +
-                        "\nBranch : " + branch +
-                        "\nSemester : " + semester +
-                        "\nGender : " + gender +
-                        "\nHobbies : " + hobbies);
-
     }
-    
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        if (e.getSource() == hb1) {
+            hob = hob + hb1.getText()+"\n";
+        }
+        if (e.getSource() == hb2) {
+            hob = hob + ", " + hb2.getText()+"\n";
+        }
+        if (e.getSource() == hb3) {
+            hob = hob + ", " + hb3.getText();
+        }
+        if (e.getSource() == hb4) {
+            hob = hob + hb4.getText();
+        }
+    }
 
 }
 
