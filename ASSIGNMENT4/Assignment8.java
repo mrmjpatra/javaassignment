@@ -1,7 +1,10 @@
-class Pyramid extends Thread{
+class Pyramid implements Runnable{
     int a;
+    Thread t;
     Pyramid(int a){
         this.a=a;
+        t=new Thread(this);
+        t.start();
     }
 
     @Override
@@ -22,15 +25,16 @@ class Pyramid extends Thread{
 
 public class Assignment8 {
     public static void main(String[] args) {
-        try {
             
-            Pyramid t1=new Pyramid(1);
+           Pyramid t1=new Pyramid(1);
+          
+           try {
+            t1.t.join();
             Pyramid t2=new Pyramid(2);
-            t1.start();
-            t1.join();
-            t2.start();
-        } catch (InterruptedException e) {
-           e.printStackTrace();
-        }
+           } catch (Exception e) {
+                e.printStackTrace();
+           }
+          
+        
     }
 }
