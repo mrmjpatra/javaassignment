@@ -27,11 +27,20 @@ class MyThread extends Thread {
             System.out.println("Enter the number to find square root");
             int num = sc.nextInt();
             findSquareRoot(num);
+        } else if (compute.equals("swap")) {
+            System.out.println("Enter the two number");
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            System.out.println("Two number  " + x + " & " + y);
+            x = x + y;
+            y = x - y;
+            x = x - y;
+            System.out.println("After swapping two number : " + x + " & " + y);
         }
     }
 
     private void findSquareRoot(int num) {
-       System.out.println("Square root : "+Math.sqrt(num));
+        System.out.println("Square root : " + Math.sqrt(num));
     }
 
     private void findFactorial(int num) {
@@ -48,11 +57,14 @@ class MyThread extends Thread {
 }
 
 public class Assignment7 {
-    public static void main(String[] args)throws Exception {
-        MyThread t1=new MyThread("factorial");
+    public static void main(String[] args) throws Exception {
+        MyThread t1 = new MyThread("factorial");
         t1.start();
-        MyThread t2=new MyThread("sqrt");
+        MyThread t2 = new MyThread("sqrt");
         t1.join();
         t2.start();
+        MyThread t3 = new MyThread("swap");
+        t2.join();
+        t3.start();
     }
 }
