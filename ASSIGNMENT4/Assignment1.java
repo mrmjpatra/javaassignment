@@ -6,8 +6,9 @@ interface PrimeFibonacci {
     public void findPrimeFibonacci(int range);
 }
 
+
 public class Assignment1 implements PrimeFibonacci {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         Scanner sc = new Scanner(System.in);
         int range;
         System.out.println("Enter the range upto which you want to print ?");
