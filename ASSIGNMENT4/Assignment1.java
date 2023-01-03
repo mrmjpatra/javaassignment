@@ -13,7 +13,7 @@ public class Assignment1 implements PrimeFibonacci {
         int range;
         System.out.println("Enter the range upto which you want to print ?");
         range = sc.nextInt();
-        PrimeFibonacci obj = new Assignment1();
+        Assignment1 obj = new Assignment1();
         obj.findPrimeFibonacci(range);
     }
 

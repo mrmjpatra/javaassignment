@@ -128,7 +128,7 @@ public class Assignment10 {
         Queue queue=new Queue();
        //insert 10 elements into queue using insert method
        System.out.println("Enter the elements to the queue");
-       for (int i = 0; i <=10; i++) {
+       for (int i = 0; i <10; i++) {
             int num=sc.nextInt();
             queue.insert(num);
        }

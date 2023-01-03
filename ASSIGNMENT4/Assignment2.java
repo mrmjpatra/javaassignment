@@ -13,15 +13,20 @@ interface Number {
 }
 
 public class Assignment2 implements Number {
-    public static void main(String[] args) throws NotArmstrongNumberException {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Assignment2 obj = new Assignment2();
         System.out.println("Enter the number");
         int number = sc.nextInt();
-        if (obj.isArmstrong(number)) {
-            System.out.println("Yes it is an Armstrong Number");
-        } else {
-            throw new NotArmstrongNumberException("It is not an Armstrong Number");
+        try {
+
+            if (obj.isArmstrong(number)) {
+                System.out.println("Yes it is an Armstrong Number");
+            } else {
+                throw new NotArmstrongNumberException("It is not an Armstrong Number");
+            }
+        } catch (NotArmstrongNumberException e) {
+            e.printStackTrace();
         }
     }
 
