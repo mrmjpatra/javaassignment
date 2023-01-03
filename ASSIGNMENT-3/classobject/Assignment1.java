@@ -54,8 +54,8 @@ class Calculator {
         return Math.sqrt(n);
     }
 
-    public double cube(int n) {
-        return Math.pow(n, 3);
+    public double cube(double n) {
+        return Math.cbrt(n);
     }
 }
 
@@ -136,7 +136,7 @@ public class Assignment1 {
 
                 case 11:
                     System.out.println("Enter the number");
-                    x = sc.nextInt();
+                    a=sc.nextDouble()
                     System.out.println("Cube root is " + calculator.cube(x));
                     break;
                 default:
