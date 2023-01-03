@@ -17,6 +17,16 @@ class Stack {
         arr = new int[10];
     }
 
+    public void read() {
+        Scanner sc = new Scanner(System.in);
+        // insert 10 elements into stack using push and isfull method
+        System.out.println("Enter the element to the stack");
+        for (int i = 0; i < 10; i++) {
+            int num = sc.nextInt();
+            push(num);
+        }
+    }
+
     public void push(int num) {
 
         if (isFull()) {
@@ -56,7 +66,7 @@ class Stack {
         if (!isEmpty()) {
             System.out.println("The element on the stack");
             for (int i = 0; i <= top; i++) {
-                System.out.print(arr[i]+"\t");
+                System.out.print(arr[i] + "\t");
             }
         }
     }
@@ -85,47 +95,41 @@ class Stack {
         System.out.println("Factorial between largest and smallest element is " +
                 fact);
     }
-    public void peak(int target){
+
+    public void peak(int target) {
         if (!isEmpty()) {
-            boolean found=false;
-            for (int i = 0; i <=top; i++) {
-                if (arr[i]==target) {
-                    found=true;
+            boolean found = false;
+            for (int i = 0; i <= top; i++) {
+                if (arr[i] == target) {
+                    found = true;
                 }
             }
             if (found) {
                 System.out.println("Element is found");
-            }else{
+            } else {
                 System.out.println("Element is not found");
             }
         }
     }
 
-
 }
 
 public class Assignment9 {
     public static void main(String[] args) {
-        Stack stack = new Stack();
         Scanner sc=new Scanner(System.in);
-        int arr[]=new int[10];
-        //insert 10 elements into stack using push and isfull method
-        System.out.println("Enter the element to the stack");
-        for (int i = 0; i < 10; i++) {
-            int num=sc.nextInt();
-            stack.push(num);
-        }
-        //find factorial of difference between largest and smallest element of stack
+        Stack stack = new Stack();
+        stack.read();
+        // find factorial of difference between largest and smallest element of stack
         stack.factorial();
         // search any user defined element in stack using peak method
         System.out.println("Enter the element to search");
-        int target=sc.nextInt();
+        int target = sc.nextInt();
         stack.peak(target);
-        //delete 3 elements from stack using pop and isempty method
+        // delete 3 elements from stack using pop and isempty method
         stack.pop();
         stack.pop();
         stack.pop();
-        //display remaining element of stack
+        // display remaining element of stack
         stack.print();
     }
 }
