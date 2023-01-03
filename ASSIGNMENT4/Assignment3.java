@@ -18,6 +18,7 @@ public class Assignment3 implements Number {
         System.out.println("Enter the number");
         int number = sc.nextInt();
         Assignment3 obj = new Assignment3();
+        
         System.out.println(obj.checkNumber(number));
     }
 

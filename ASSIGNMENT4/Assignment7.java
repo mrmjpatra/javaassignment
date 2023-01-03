@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 /*. WAP to compute factorial, GCD, LCM, sqrt without using any library function, swap two number Without using 3rd variable using multithreading? */
 
-class MyThread extends Thread {
+class MyThreadTest implements Runnable {
     Scanner sc;
     String compute;
 
-    MyThread(String compute) {
+    MyThreadTest(String compute) {
         this.compute = compute;
     }
 
@@ -58,12 +58,15 @@ class MyThread extends Thread {
 
 public class Assignment7 {
     public static void main(String[] args) throws Exception {
-        MyThread t1 = new MyThread("factorial");
+        MyThreadTest test1=new MyThreadTest("factorial");
+        Thread t1=new Thread(test1);
         t1.start();
-        MyThread t2 = new MyThread("sqrt");
+        MyThreadTest test2 = new MyThreadTest("sqrt");
+        Thread t2=new Thread(test2);
         t1.join();
         t2.start();
-        MyThread t3 = new MyThread("swap");
+        MyThreadTest test3 = new MyThreadTest("swap");
+        Thread t3=new Thread(test3);
         t2.join();
         t3.start();
     }
