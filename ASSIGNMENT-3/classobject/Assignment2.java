@@ -1,10 +1,16 @@
 /*Write a program to give information about any number such as whether it is even odd, prime or not prime, or positive or negative, palindrome or not using class and object? */
 package classobject;
 
+import java.util.Scanner;
+
 class CheckNumber{
     int num;
     public CheckNumber(int num){
         this.num=num;
+        isEven();
+        isPrime();
+        isPositive();
+        isPalindrome();
     }
     public void isEven(){
         if (num%2==0) {
@@ -51,7 +57,10 @@ class CheckNumber{
 
 public class Assignment2 {
     public static void main(String[] args) {
-        CheckNumber cn=new CheckNumber(11);
-        cn.isPalindrome();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num=sc.nextInt();
+        CheckNumber checkNumber=new CheckNumber(num);
+
     }
 }

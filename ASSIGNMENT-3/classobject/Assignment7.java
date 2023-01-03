@@ -13,7 +13,7 @@ class Bank{
     public void deposit(float amount){
         if (amount<1000) {
             balance+=amount-100;
-            System.out.println("100 rupess is deducted as a penality, Total balance is ::"+balance);
+            System.out.println("100 rupess is deducted as  penality, Total balance is ::"+balance);
         }else{
             balance+=amount;
             System.out.println("Total Balance :: "+balance);

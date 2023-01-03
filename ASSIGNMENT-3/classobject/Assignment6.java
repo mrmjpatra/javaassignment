@@ -3,7 +3,7 @@ package classobject;
 
 class CheckTriangle {
     public void check(float a, float b, float c) {
-        if (a * 2 + b * 2 == c * 2 || a * 2 + c * 2 == b * 2 || c * 2 + b * 2 == a * 2)
+        if (a * a + b * b == c * c || a * a + c * c == b * b || c * c + b * b == a * a)
             System.out.println("Right angle triangle");
         else if (a == b && b == c)
             System.out.println("Equilateral Triangle");
@@ -15,6 +15,6 @@ class CheckTriangle {
 public class Assignment6 {
     public static void main(String[] args) {
         CheckTriangle ct=new CheckTriangle();
-        ct.check(2, 2, 3);
+        ct.check(6, 8, 10);
     }
 }
