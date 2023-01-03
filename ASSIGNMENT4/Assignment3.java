@@ -7,7 +7,7 @@ interface Number {
 }
 
 class NotCheckNumberException extends Exception {
-    NotCheckNumberException(String error) {
+    public NotCheckNumberException(String error) {
         super(error);
     }
 }

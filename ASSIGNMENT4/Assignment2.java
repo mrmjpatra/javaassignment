@@ -19,15 +19,16 @@ public class Assignment2 implements Number {
         System.out.println("Enter the number");
         int number = sc.nextInt();
         try {
-
             if (obj.isArmstrong(number)) {
                 System.out.println("Yes it is an Armstrong Number");
             } else {
+                System.out.println(10/0);
                 throw new NotArmstrongNumberException("It is not an Armstrong Number");
             }
         } catch (NotArmstrongNumberException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override
