@@ -18,6 +18,7 @@ class Stack {
     }
 
     public void push(int num) {
+
         if (isFull()) {
             System.out.println("stack is full");
         } else {
