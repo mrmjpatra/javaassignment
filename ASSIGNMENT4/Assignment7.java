@@ -5,9 +5,12 @@ import java.util.Scanner;
 class MyThreadTest implements Runnable {
     Scanner sc;
     String compute;
+    Thread t;
 
     MyThreadTest(String compute) {
         this.compute = compute;
+        t = new Thread(this);
+        t.start();
     }
 
     @Override
@@ -21,14 +24,14 @@ class MyThreadTest implements Runnable {
             System.out.println("Enter the two number for gcd");
             int x = sc.nextInt();
             int y = sc.nextInt();
-            
+
             System.out.println("GCD of two number " + gcd(x, y));
         } else if (compute.equals("lcm")) {
             System.out.println("Enter the two number for lcm");
             int x = sc.nextInt();
             int y = sc.nextInt();
-            int lcm=((x*y)/gcd(x, y));
-            System.out.println("LCM Of two number "+lcm);
+            int lcm = ((x * y) / gcd(x, y));
+            System.out.println("LCM Of two number " + lcm);
 
         } else if (compute.equals("sqrt")) {
             System.out.println("Enter the number to find square root");
@@ -76,27 +79,19 @@ class MyThreadTest implements Runnable {
 
 public class Assignment7 {
     public static void main(String[] args) throws Exception {
-        MyThreadTest test1 = new MyThreadTest("factorial");
-        Thread t1 = new Thread(test1);
-        t1.start();
-        MyThreadTest test2 = new MyThreadTest("sqrt");
-        Thread t2 = new Thread(test2);
-        t1.join();
-        t2.start();
-        MyThreadTest test3 = new MyThreadTest("swap");
-        Thread t3 = new Thread(test3);
-        t2.join();
-        t3.start();
-
-        MyThreadTest test4=new MyThreadTest("gcd");
-        Thread t4=new Thread(test4);
-        t3.join();
-        t4.start();
-
-        MyThreadTest test5=new MyThreadTest("lcm");
-        Thread t5=new Thread(test5);
-        t4.join();
-        t5.start();
+        try {
+            MyThreadTest test1 = new MyThreadTest("factorial");
+            test1.t.join();
+            MyThreadTest test2 = new MyThreadTest("sqrt");
+            test2.t.join();
+            MyThreadTest test3 = new MyThreadTest("swap");
+            test3.t.join();
+            MyThreadTest test4 = new MyThreadTest("gcd");
+            test4.t.join();
+            MyThreadTest test5 = new MyThreadTest("lcm");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
