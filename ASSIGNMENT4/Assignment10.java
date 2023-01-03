@@ -1,3 +1,5 @@
+//WAP to create smiley face and Start using Applet
+
 import java.applet.*;
 import java.awt.*;
 public class Assignment10 extends Applet{

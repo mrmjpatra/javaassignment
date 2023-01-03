@@ -18,7 +18,6 @@ class Calculator extends JFrame implements ActionListener{
         setLayout(null);
         cn=getContentPane();
 
-        tresult=new JTextField();
         //First Label
         num1=new JLabel("Enter First Number");
         num1.setBounds(100,100,200,20);
@@ -95,14 +94,14 @@ class Calculator extends JFrame implements ActionListener{
             tresult.setText(result+" ");
             tnum1.setText("");
             tnum2.setText("");
-            System.out.println(result);
+           
         }
         if (e.getSource()==sub) {
             int result=Integer.parseInt(tnum1.getText())-Integer.parseInt(tnum2.getText());
             tresult.setText(result+" ");
             tnum1.setText("");
             tnum2.setText("");
-            System.out.println(result);
+           
         }
         if (e.getSource()==mul) {
             long result=Integer.parseInt(tnum1.getText())*Integer.parseInt(tnum2.getText());

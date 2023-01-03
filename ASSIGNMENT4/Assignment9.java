@@ -20,7 +20,6 @@ public class Assignment9 extends Applet implements Runnable {
     public void paint(Graphics g) {
         g.setColor(Color.black);
         g.drawString(name, x, y);
-
     }
 
     @Override
@@ -37,7 +36,7 @@ public class Assignment9 extends Applet implements Runnable {
                     }
 
                 } else {
-                    if (x > 0) {
+                    if (x > 100) {
                         x -= 5;
                     } else {
                         scroll = true;
@@ -46,6 +45,7 @@ public class Assignment9 extends Applet implements Runnable {
                 }
                 Thread.sleep(100);
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 

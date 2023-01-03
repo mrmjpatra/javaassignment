@@ -16,6 +16,7 @@ public class DisplayFormDetails extends JFrame implements ActionListener{
         container = getContentPane();
         setSize(500, 1300);
         setVisible(true);
+        
         name = new JLabel();
         name.setBounds(100, 50, 300, 30);
         rollNo = new JLabel();

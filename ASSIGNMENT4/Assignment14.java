@@ -92,11 +92,14 @@ class RegistrationForm extends JFrame implements ActionListener, ItemListener {
         cbBranch.addItem("BTCH");
         cbBranch.addItem("DIPLOMA");
         cbBranch.addItem("MTECH");
+        cbBranch.addActionListener(this);
         c.add(cbBranch);
+
         // semester form field
         lSemester = new JLabel("Choose Semester");
         lSemester.setBounds(100, 350, 150, 20);
         c.add(lSemester);
+
 
         cbSemester = new JComboBox<>();
         cbSemester.addItem("First Semester");
@@ -104,12 +107,14 @@ class RegistrationForm extends JFrame implements ActionListener, ItemListener {
         cbSemester.addItem("Third Semester");
         cbSemester.addItem("Fourth Semester");
         cbSemester.setBounds(250, 350, 100, 20);
+        cbSemester.addActionListener(this);
         c.add(cbSemester);
 
         // gender
         lGender = new JLabel("Gender");
         lGender.setBounds(100, 400, 100, 20);
         c.add(lGender);
+
         male = new JRadioButton("Male");
         male.setBounds(200, 400, 100, 20);
         male.setSelected(false);
@@ -127,6 +132,7 @@ class RegistrationForm extends JFrame implements ActionListener, ItemListener {
         lHobbies = new JLabel("Hobbies");
         lHobbies.setBounds(100, 450, 100, 20);
         c.add(lHobbies);
+
         hb1 = new JCheckBox("Watching Movies");
         hb1.setBounds(200, 450, 150, 20);
         hb1.addItemListener(this);
@@ -204,10 +210,10 @@ class RegistrationForm extends JFrame implements ActionListener, ItemListener {
     @Override
     public void itemStateChanged(ItemEvent e) {
         if (e.getSource() == hb1) {
-            hob = hob + hb1.getText()+"\n";
+            hob = hob + hb1.getText() + "\n";
         }
         if (e.getSource() == hb2) {
-            hob = hob + ", " + hb2.getText()+"\n";
+            hob = hob + ", " + hb2.getText() + "\n";
         }
         if (e.getSource() == hb3) {
             hob = hob + ", " + hb3.getText();
