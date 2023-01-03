@@ -17,11 +17,11 @@ class Search {
         int end=arr.length-1;
         while(start<=end){
             int mid=(start+end)/2;
-            if (mid==target) {
+            if (arr[mid]==target) {
                 return true;
             }
 
-            if(target<mid){
+            if(target<arr[mid]){
                 end=mid-1;
             }else{
                 start=mid+1;
@@ -37,6 +37,6 @@ public class Assignment8{
         Search search=new Search();
 
         // System.out.println(search.linearSearch(arr, 10));
-        System.out.println(search.binarySearch(arr, 1));
+        System.out.println(search.binarySearch(arr, 8));
     }
 }
