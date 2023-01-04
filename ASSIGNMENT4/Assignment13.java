@@ -17,6 +17,7 @@ class DigitalClock extends JFrame implements Runnable {
     DigitalClock() {
         t = new Thread(this);
         t.start();
+
         setTitle("Digital Clock");
         btn = new JButton();
         btn.setBounds(50, 50, 150, 150);
@@ -35,7 +36,6 @@ class DigitalClock extends JFrame implements Runnable {
         while (true) {
             try {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-                LocalTime time = LocalTime.now();
                 btn.setText(LocalTime.now().format(dtf));
                 
             } catch (Exception e) {

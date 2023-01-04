@@ -113,7 +113,6 @@ class SortintAlgo {
         int pivot = arr[lb];
         int start = lb + 1;
         for (int i = lb + 1; i <= ub; i++) {
-            System.out.println(arr[i]);
             if (arr[i] < pivot) {
                 swap(arr, start, i);
                 start++;
